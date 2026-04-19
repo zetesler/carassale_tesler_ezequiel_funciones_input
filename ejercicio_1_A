@@ -1,5 +1,3 @@
-
-
 # 1A - Realizar una función para pedir un número ENTERO
 #______________________________________________________
 
@@ -27,3 +25,28 @@ def get_int(mensaje: str, mensaje_error: str, minimo: int, maximo: int, reintent
             contador_intentos += 1
             
     print("USTED HA ALCANZADO EL LÍMITE DE INTENTOS")
+
+
+#****************************************************************************************************************
+
+# EXPLICACIÓN LÍNEA POR LÍNEA:
+
+"""
+
+- LÍNEA 4: Definición de la función y especificación de parámetros + tipo de parámetro + retorno.
+- LÍNEA 16: Contador de intentos, inicializado en cero.
+- LÍNEA 18: Inicio bucle While, que se activa solamente si el valor contador de intentos es menor.
+al parámetro "reintentos" cuyo valor es especificado al llamar a la función.
+- LÍNEA 19: El programa pide al usuario el ingreso de un número decimal entre 1 y 200 y lo guarda
+en la variable "numero_usuario".
+- LÍNEAS 20/21: Si el número ingresado está entre los valores de los parámetros MÍNIMO y MÁXIMO
+especificados al llamar a la función,
+imprime el mensaje con el número ingresado.
+- LÍNEA 22: Retorna el número ingresado por el usuario.
+- LÍNEAS 23/24: Si el número ingresado no es válido, imprime el mensaje de error.
+- LÍNEA 25: Suma un intento al contador de intentos.
+- LÍNEA 27: Anuncia que ya se terminaron los intentos una vez que se alcanzó el límite establecido
+al llamar a la función.
+- LÍNEAS 30/36: Llamada a la función + determinación de los valores de los parámetros.
+
+"""
