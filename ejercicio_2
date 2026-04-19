@@ -1,0 +1,74 @@
+# 2 - FUNCIÓN PARA INGRESAR UN STRING Y CONTAR SUS CARACTERES
+#____________________________________________________________
+
+longitud = 5
+
+def get_string(mensaje: str, mensaje_error: str, reintentos: int, longitud_string: int) -> str|None:
+
+    """
+    Función que solicita al usuario el ingreso de un STRING, valida su cantidad de catacteres y la retorna.
+    mensaje: Mensaje que se va a imprimir antes de pedirle al usuario el dato por consola.
+    mensaje_error: Mensaje de error en el caso de que el dato ingresado sea invalido.
+    longitud: La cantidad de catacteres que deberá tener el STRING.
+    return: Número ingresado o None.
+
+    """
+    
+    texto_usuario = True
+    contador_intentos = 0
+
+    while contador_intentos < reintentos:
+        texto_usuario = input(mensaje)
+        if len(texto_usuario) < longitud_string or not texto_usuario.isalpha():
+            print(mensaje_error)
+            contador_intentos += 1
+        else: 
+            print(f"LA PALABRA INGRESADA ES {texto_usuario.upper()}.")
+            return texto_usuario
+    print(f"LÍMITE DE {reintentos} INTENTOS ALCANZADO.")
+    return None
+    
+
+
+get_string(
+    longitud_string = longitud,
+    reintentos = 3,
+    mensaje = f"INGRESE UNA PALABRA DE {longitud} LETRAS: ",
+    mensaje_error = f"ERROR! LA PALABRA INGRESADA CONTIENE MENOS DE {longitud} LETRAS! INGRESE NUEVAMENTE: ",
+)
+
+
+#****************************************************************************************************************
+
+# EXPLICACIÓN LÍNEA POR LÍNEA:
+
+"""
+
+- LÍNEA 5: Establece la variable global "longitud" y su valor.
+
+- LÍNEA 7: Definición de la función y especificación de parámetros + tipo de parámetro + retorno.
+
+- LÍNEA 18: Definición de la variable texto_usuario igualada a True para utilizarla en el bucle While
+
+- LÍNEA 19: Contador de intentos, inicializado en cero.
+
+- LÍNEA 21: Inicio bucle While, que se activa solamente si el valor contador de intentos es menor.
+al parámetro "reintentos" cuyo valor es especificado al llamar a la función.
+
+- LÍNEA 22: Dentro del bucle While, pide al usuario que ingrese un string, mostrándole el mensaje establecido como parámetro.
+
+- LÍNEA 23: Evalúa si la cantidad de caracteres del string ingresado es menor a la cantidad establecida en el parámetro
+"longitud-string" (el cual a su vez está igualado a la variable global "longitud"). Además evalúa si el string ingresado NO son letras, con ".isalpha()".
+
+- LÍNEAS 24: Si el string ingresado no contiene la cantidad mínima de caracteres, imprime el mensaje de error.
+
+- LÍNEA 25: Suma un intento al contador de intentos.
+
+- LÍNEAS 26/27: Si el string ingresado tiene la cantidad mínima de caracteres, imprime un mensaje mostrando la palabra
+ingresada. Si la misma fue ingresada en minúscula, la transforma a mayúsculas con ".upper()".
+
+- LÍNEA 28: Retorna el string ingresado.
+
+- LÍNEAS 34/39. Llamada a la función + determinación de los valores de los parámetros.
+
+"""
