@@ -25,6 +25,7 @@ def get_int(mensaje: str, mensaje_error: str, minimo: int, maximo: int, reintent
             contador_intentos += 1
             
     print("USTED HA ALCANZADO EL LÍMITE DE INTENTOS")
+    return None
 
 
 #****************************************************************************************************************
@@ -54,6 +55,8 @@ especificados al llamar a la función, imprime el mensaje con el número ingresa
 
 - LÍNEA 27: Anuncia que ya se terminaron los intentos una vez que se alcanzó el límite establecido
 al llamar a la función.
+
+- LÍNEA 28: Retorna None si el usuario ingresó erróneamente en todos los intentos.
 
 - LÍNEAS 30/36: Llamada a la función + determinación de los valores de los parámetros.
 
