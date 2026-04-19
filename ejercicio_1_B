@@ -1,0 +1,37 @@
+
+# 1B - FUNCIÓN PARA INGRESAR UN NÚMERO DECIMAL
+#____________________________________________
+
+def get_float(mensaje: str, mensaje_error: str, minimo: float, maximo: float, reintentos: int) -> float|None:
+
+    """
+    Función que solicita al usuario el ingreso de un número DECIMAL y lo valida.
+    mensaje: Mensaje que se va a imprimir antes de pedirle al usuario el dato por consola.
+    mensaje_error: Mensaje de error en el caso de que el dato ingresado sea invalido.
+    mínimo: Valor mínimo admitido (inclusive)
+    máximo: Valor máximo admitido (inclusive)
+    reintentos: Cantidad de veces que se volverá a pedir el dato en caso de error.
+    return: Número ingresado o None
+
+    """
+    contador_intentos = 0
+
+    while contador_intentos < reintentos:
+        numero_usuario = float(input("INGRESE UN NÚMERO DECIMAL ENTRE 1.1 Y 199.9: "))
+        if numero_usuario >= minimo and numero_usuario <= maximo:
+            print(f"USTED HA INGRESADO EL NÚMERO {numero_usuario}.")
+            return numero_usuario
+        else:
+            print(mensaje_error)
+            contador_intentos += 1
+            
+    print("USTED HA ALCANZADO EL LÍMITE DE INTENTOS")
+        
+    
+get_float(
+    maximo=199.9,
+    minimo=1.1,
+    reintentos=2,
+    mensaje= "INGRESE UN NÚMERO ENTERO ENTRE 1.1 Y 199.9: ",
+    mensaje_error= "ERROR! INGRESE UN NÚMERO VÁLIDO: "
+    )
