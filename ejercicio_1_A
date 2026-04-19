@@ -1,7 +1,7 @@
 
 
-# Realizar una función para pedir un número ENTERO por consola.
-#______________________________________________________________
+# 1A - Realizar una función para pedir un número ENTERO
+#______________________________________________________
 
 def get_int(mensaje: str, mensaje_error: str, minimo: int, maximo: int, reintentos: int) -> int|None:
 
