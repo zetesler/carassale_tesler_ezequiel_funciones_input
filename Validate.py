@@ -3,7 +3,7 @@
 def validate_number(numero_usuario: int|float, minimo: int|float, maximo: int|float) -> bool:
     """
     Valida que un número ENTERO o DECIMAL esté dentro del rango minimo-maximo.
-    numero: El número a validar.
+    numero_usuario: El número a validar.
     minimo: Valor mínimo admitido (inclusive).
     maximo: Valor máximo admitido (inclusive).
     return: True si es válido, False si no lo es.
